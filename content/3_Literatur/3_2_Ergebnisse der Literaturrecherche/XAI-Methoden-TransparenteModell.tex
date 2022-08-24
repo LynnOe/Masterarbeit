@@ -1,0 +1,20 @@
+\subsection{XAI-Methoden für transparente Methoden}
+Wenngleich transparente Modelle per Definition keiner Erklärung bedürften, wurden in der Literatur jedoch einige Methoden gefunden, welche zur Interpretation dieser eingesetzt werden können. Im folgenden Kapitel werden diese je Algorithmus präsentiert.
+
+\subsubsection{Lineare Regression}
+\cite{westin2020building} empfehlen für das Erklären des Outputs linearer Modelle die Hervorhebung der wichtigsten Eingabeparameter und deren relativen Bedeutung zueinander. 
+\subsubsection{Entscheidungsbäume}
+\cite{guidotti2018survey} empfehlen für die Erklärung von Entscheidungsbäumen eine Visualisierung dieser oder alternativ eine textuelle Erklärung in Form von Wenn-Dann-Regeln. Dies kann sowohl für lokale als auch globale Erklärungen angewendet werden.
+
+\subsubsection{Random Forest}
+Für das Erklären von Random Forests können Entscheidungsbäume und Wenn-Dann-Regeln eingesetzt werden. Hierbei kann ein Entscheidungsbaum globales Verständnis über den Random Forest bieten, während die Regeln der ungefähren Abbildung der Entscheidungen der einzelnen Bäume dienen sollen \cite{chen2021novel}.
+%Hier auch: diese Methode ist nur Annäherung
+
+\subsubsection{Sonstiges}
+Die vorliegende Masterarbeit orientiert sich aus den in Kapitel \ref{subsubsec_Verfahren} genannten Gründen nur an einer Auswahl an ML-Methoden, für die XAI-Ansätze gesucht werden. In der Literaturrecherche wurden jedoch für andere Verfahren auch XAI-Methoden gefunden. Der Vollständigkeit halber werden diese hier aufgelistet. Auf weitere Erläuterungen wird jedoch verzichtet. 
+\begin{itemize}
+    \item GAM
+    \begin{itemize}
+        \item Gamut:interaktive Visualisierung mit der Zielgruppe: Data Scientists \cite{hohman2019gamut} 
+    \end{itemize}
+\end{itemize}

@@ -1,0 +1,209 @@
+%!TEX encoding = UTF-8 Unicode
+% ================================================================================
+\documentclass[
+    fontsize=12pt,
+    headings=small,
+    twoside=false, % true, wenn sich die Einrückung abwechseln soll
+    parskip=half,           % Ersetzt manuelles Setzen von parskip/parindent.
+    bibliography=totoc,
+    numbers=noenddot,       % Entfernt den letzten Punkt der Kapitelnummern.
+    open=any,               % Kapitel kann auf jeder Seite beginnen.
+%   final                   % Entfernt alle todonotes und den Entwurfstempel.
+    ]{scrreprt}
+% ===================================Praeambel==================================
+\include{stylesvs}
+\usepackage[colorinlistoftodos]{todonotes}   
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% ===================================Dokument===================================
+
+\title{Transparenzschaffende Maßnahmen für Verfahren des maschinellen Lernens}
+\author{Lynn Oesterwind}
+% \date{01.01.2015} % Falls ein bestimmtes Datum eingesetzt werden soll, einfach
+                    %  diese Zeile aktivieren.
+
+\begin{document}
+
+\begin{titlepage}% {{{
+\includegraphics[width=6.8cm]{pic/up-uhh-logo-u-2010-u-farbe-u-rgb.pdf}
+\begin{center}\Large
+	\vfill
+	Masterarbeit
+	\vfill
+	\makeatletter
+	{\Large\textsf{\textbf{\@title}}\par}
+	\makeatother
+	\vfill
+	vorgelegt von
+	\par\bigskip
+	\makeatletter
+	{\@author} \par
+	\makeatother
+	Matrikelnummer 6919328 \par
+	Studiengang Wirtschaftsinformatik
+	\vfill
+	\makeatletter
+	eingereicht am {\@date}
+	\makeatother
+	\vfill
+	Betreuer: Joshua Stock\par
+	Erstgutachter: Prof. Dr.-Ing. Hannes Federrath \par
+	Zweitgutachter: Dr.-Ing. Daniel Demmler
+\end{center}
+\ifoptionfinal{}{
+\begin{tikzpicture}[remember picture, overlay]
+    \node[draw, red, font=\ttfamily\bfseries\Large, xshift=30mm, yshift=238mm,
+        rotate=340, text centered, text width=6cm, very thick, rounded
+        corners=4mm] at (current page.south) {Entwurf vom \today};
+\end{tikzpicture}
+}
+\end{titlepage}% }}}
+
+% Seitenzahlen i, ii, ...
+\pagenumbering{roman}
+
+% Tabellenverzeichnis
+\tableofcontents
+% Abbildungsverzeichnis
+%\listoffigures
+% Füge Abbildungsverzeichnis dem Inhaltsverzeichnis hinzu
+%\addcontentsline{toc}{chapter}{\listfigurename}
+%Tabellenverzeichnis
+%\listoftables
+% Füge Tabellenverzeichnis dem Inhaltsverzeichnis hinzu
+%\addcontentsline{toc}{chapter}{\listtablename}
+    
+% Erstelle Nomenclature
+%\makenomenclature
+%\include{nomenclature}
+% Zeige Nomenclature an
+%\printnomenclature[9em]
+
+
+\chapter*{Aufgabenstellung}
+Nur Studien-, Bachelor-, Master- und Diplomarbeiten: Soweit eine ausformulierte Aufgabenstellung mit der Betreuerin bzw. dem Betreuer vereinbart wurde, diese bitte hier einfügen.
+\todo[inline]{Da der Pipeline-Begriff schon vergeben ist (siehe z.B. z.B. \cite{kreuzberger2022machine} oder https://docs.microsoft.com/de-de/azure/machine-learning/concept-ml-pipelines), hier daran denken, diesen in Datenfluss umzuändern :)}
+
+\chapter*{Zusammenfassung}
+
+Für die eilige Leserin bzw. den eiligen Leser sollen auf etwa einer halben, maximal einer Seite die wichtigsten Inhalte, Erkenntnisse, Neuerungen bzw. Ergebnisse der Arbeit beschrieben werden.
+
+Durch eine solche Zusammenfassung (im Engl. auch Abstract genannt) am Anfang der Arbeit wird die Arbeit deutlich aufgewertet. Hier sollte vermittelt werden, warum man die Arbeit lesen sollte.
+
+%\tableofcontents
+
+% Inkludiere 1_0_0_Vorbemerkung.tex Datei
+\chapter{Einleitung}
+\input{content/1_Einleitung/1_1_Motivation}
+% Seitenzahlen 1,2,3, ...
+\pagenumbering{arabic}
+
+\input{content/1_Einleitung/1_2_Forschungsziel}
+
+\chapter{Theoretische Grundlagen}
+Das vorliegende Kapitel führt in die theoretischen Grundlagen des MLs ein und stellt die Grundzüge der Transparenz von IT-Systemen dar.
+
+\section{Maschinelles Lernen}
+ML hat in den letzten Jahren Einzug in viele Bereiche des persönlichen und professionellen Lebens genommen. So wird es beispielsweise im Marketing und Vertrieb, aber auch in der Medizin eingesetzt. Mithilfe selbstlernender Algorithmen können beispielsweise Persönlichkeitsprofile erstellt oder Krankheiten erkannt werden \cite{strobel2019aspects, Wuttke.2022}. Es bestehen vielfältige Anwendugnsmöglichkeiten in nahezu allen Branchen. Technisch können ML-Algorithmen im Bereich der Computer Vision eingesetzt werden, um z.B. Objekte auf Bildern zu erkennen. Zusätzlich können Vorhersagen getroffen werden. Überdies sind ML-Algorithmen unter anderem in der Lage aus Texten Informationen zu ziehen oder diese sogar zu übersetzen \cite{shinde}.
+
+Folgendes Kapitel bietet einen Überblick über ML, indem zunächst das Feld ML abgegrenzt wird. Darauffolgend wird auf die verschiedenen Lerntypen eingegangen und die Funktionsweise konkreter Algorithmen dargelegt.
+
+\input{content/2_Theoretische Grundlagen/2_1_Maschinelles Lernen/2_1_1_Begriff}
+\input{content/2_Theoretische Grundlagen/2_1_Maschinelles Lernen/2_1_2_Ablauf}
+\input{content/2_Theoretische Grundlagen/2_1_Maschinelles Lernen/2_1_3_Typen des maschinellen Lernens}
+\input{content/2_Theoretische Grundlagen/2_1_Maschinelles Lernen/2_1_4_Verfahren des maschinellen Lernens}
+\input{content/2_Theoretische Grundlagen/2_1_Maschinelles Lernen/2_1_5_Erklärbares maschinelles Lernen}
+
+\section{Transparenz}
+Dieses Kapitel definiert den Term "Transparenz", welcher im Mittelpunkt dieser Arbeit steht. Darauf folgend wird dargestellt, warum Transparenz speziell bei ML-System von großer Bedeutung ist.
+\input{content/2_Theoretische Grundlagen/2_2_Transparenz/2_2_1_Definition}
+\input{content/2_Theoretische Grundlagen/2_2_Transparenz/2_2_2_RelevanzvonTransparenzbeiAlgorithmendesmaschinellenLernens}
+
+\section{Dokumentation von IT-Systemen}
+\input{content/2_Theoretische Grundlagen/2_3_Dokumentation von IT-Systemen/2_3_Dokumentation von IT-Systemen}
+
+\chapter{Transparenzschaffende Maßnahmen aus der Literatur}
+Im folgenden Kapitel ist der aktuelle Stand der Forschung dargestellt, welcher sich mit transparenzsschaffenden Maßnahmen im Umfeld des maschinellen Lernens beschäftigt. Die Erkenntnisse der Literaturrecherche bilden maßgeblich den Grundstein, für die zu erstellende Handreichung, die den Kern dieser Masterarbeit darstellt. Zunächst (in Kapitel \ref{sec:VorgehenLiteraturrecherche}) werden die Rahmenbedingungen dargelegt, an denen sich das Vorgehen orientierte. Darauf folgend werden in Kapitel \ref{sec:ErgebnisseLieratur} mit Blick auf die in Kapitel \ref{sec:ForschungszielundUmfang} formulierten Forschungsfragen die Ergebnisse der Literaturrecherche vorgestellt.
+
+\input{content/3_Literatur/3_1_Vorgehen der Literaturrecherche/3_1_0_Vorgehen der Literaturrecherche}
+\input{content/3_Literatur/3_1_Vorgehen der Literaturrecherche/3_1_1_Umfang der Literaturrecherche}
+\input{content/3_Literatur/3_1_Vorgehen der Literaturrecherche/3_1_2_Konzeptualisierung des Themas}
+\input{content/3_Literatur/3_1_Vorgehen der Literaturrecherche/3_1_3_Literaturrecherche}
+\input{content/3_Literatur/3_1_Vorgehen der Literaturrecherche/3_1_4_Literaturanalyse und -synthese}
+\input{content/3_Literatur/3_1_Vorgehen der Literaturrecherche/3_1_5_Forschungsagenda}
+
+\section{Ergebnisse der Literaturrecherche}
+\label{sec:ErgebnisseLieratur}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Konzepte}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/WasTransparentMachen}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Daten}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Transparenz durch Modell}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Modellauswahl}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Erklaerungen}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Einordnung von XAI-Methoden}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/XAI-Methoden-TransparenteModell}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/XAI-Modellagnostische Methoden - lokal.tex}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/XAI-Modellagnostische Methoden - global}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/XAI-NN}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/XAI-FeatureExtraction}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Praesentation von Ekrlaerungen}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/XAI-Plattformen}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Vorgehen bei Entwicklung}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/Dokumentation}
+\input{content/3_Literatur/3_2_Ergebnisse der Literaturrecherche/ProblemeMitTransparenz}
+
+%Fairness-Methoden gibt es auch noch und es wurden auch welche gefunden, aber wegen Zeit wurde sich darauf nicht konzentriert (Quelle 5, 7, 18, 19, 22, 57, 59, 62, 63, denton2020bringing, 65 )
+%Ausblick für später: \cite{de2018algorithmic} Kann Transparenz Accountability ersetzen?
+%Ethische Betrachtung/Motivation für Transparenz: 46
+%rechtliche Betrachtung: 54
+
+%Branchenspezifische Quellen:
+%-Medizin: \cite{garbin2022assessing} \cite{keller2020augmenting} \cite{zerka2020blockchain}
+%- Luftfahrt: \cite{hernandez2021explainable}, \cite{westin2020building}
+%- IT-Security \cite{wang2020explainable}, \cite{huvc2021anomaly}, \cite{pan2021automated}
+
+
+%Stehen geblieben bei Zeile: 397
+% ===========================Selbstständigkeitserklärung======================
+\chapter*{Eidesstattliche Versicherung} % war: Selbständigkeitserklärung
+\vspace{1cm}
+
+\todo[noline]{Bitte verwenden Sie hier in jedem Fall die offizielle von der Prüfungsbehörde vorgegebene Formulierung der Selbständigkeitserklärung.}
+%
+Hiermit versichere ich an Eides statt, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Hilfsmittel – insbesondere keine im Quellenverzeichnis nicht benannten Internet-Quellen – benutzt habe. Alle Stellen, die wörtlich oder sinngemäß aus Veröffentlichungen entnommen wurden, sind als solche kenntlich gemacht. Ich versichere weiterhin, dass ich die Arbeit vorher nicht in einem anderen Prüfungsverfahren eingereicht habe und die eingereichte schriftliche Fassung der auf dem elektronischen Speichermedium entspricht.
+
+Ggf. streichen: Ich bin damit einverstanden, dass meine Abschlussarbeit in den Bestand der Fachbereichsbibliothek eingestellt wird.
+
+\makeatletter
+Hamburg, den {\@date}
+\makeatother
+
+\vspace{2cm}
+\rule{6cm}{0.25pt}\\
+\makeatletter
+{\@author} \par
+\makeatother
+
+
+% =============================Literaturverzeichnis=============================
+\begin{raggedright}         % Schaltet Blocksatz ab, erzeugt ein stimmigeres
+                            %  Schriftbild im Literaturverzeichnis.
+  \printbibliography        % Falls Biblatex verwendet wird.
+  \label{sec:literaturverzeichnis}
+\end{raggedright}
+
+
+% ===================================Anhang=====================================
+\appendix
+\setcounter{figure}{0}
+\renewcommand\thetable{A.\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand\thetable{A.\arabic{table}}
+
+
+% ================================Todo list==============================
+\listoftodos
+ \todototoc
+
+\end{document}

@@ -1,0 +1,43 @@
+\subsection{Daten}
+\subsubsection{Bias}
+\todo[inline]{Bias/oder auch den ersten Teil des folgenden Abschnitts in mein Grundlagenkapitel mitaufnehmen?}
+Bias in Daten ist ein großes Problem und kann sich negativ auf Fairness, aber auch auf die Funktionweise des ML-Algorithmus auswirken. Es existieren unterschiedliche Arten von Bias, welche an dieser Stelle kurz zusammengefasst sind \cite{suresh2021framework}: 
+%Es existieren unterschiedliche Typen von Bias, welche zu unterscheidlichen Zeiptunkten auftreten können (siehe Figure 1 originalquelle).
+\begin{itemize}
+    \item Historischer Bias: Diese Art von Bias kann selbst dann entstehen, wenn Trainingsdaten optimal erhoben wurden. Schaden durch historischen Bias entsteht auch bei einer exakten Darstellung der realen Welt, jedoch existieren in dieser Stereotypen, welche im späteren Verlauf durch die Anwendung des Algorithmus weiter verstärkt werden könnten.
+    \item Representation Bias ist eine Art des Bias, welche einen Teil der Bevölkerung unterrepräsentiert.
+    \item Measurement Bias: Dieser Typ zielt auf Probleme bei der Auswahl, der Anhäufung und der Berechnung von Merkmalen und Zielvariablen ab. Dies kann durch begrenzte Möglichkeiten in der realen Welt bedingt sein, Daten exakt messen zu können.
+    \item Aggregation Bias: Entitäten, welche in der Realität eigentlich unterschiedlich behandelt werden sollten, werden jedoch mit dem gleichen Modell behandelt.
+    \item Learning Bias zielt auf falsche Modellierungsentscheidungen ab. So wird beispielsweise nicht die richtige Zielfunktion ausgewählt.
+    \item Evaluation Bias: Die für die Evaluation genutzten Daten erfüllen keine oder andere Qualitätskriterien und -maßstäbe als die für das Training verwendeten Daten.
+    \item Beim Deployment Bias steht die Problemlösung des Modells im Vordergrund. Das Modell erarbeitet seine Vorhersage auf eine andere Weise, als dies normalerweise getan wird, weil das Modell bspw. den sozialen Kontext unberücksichtigt lässt.
+\end{itemize}
+
+Um Bias zu erkennen, haben \cite{suresh2021framework} ein Framework entwickelt, welches es mithilfe von Formularisierung ermöglichen soll, Bias zu erkennen. \cite{suresh2021framework} verstehen den Datenverarbeitungsprozess als Aneinanderreihung von Mapping-Funktionen. Leider geben die Autoren keine Checkliste oder ähnliches an die Hand, um Bias erkennen zu können, weisen jedoch auf Aspekte hin, welche dabei helfen können. In folgender Aufzählung ist dies kurz zusammengefasst:
+\begin{itemize}
+    \item Historischer Bias: Wie sind Merkmale und Zielvariablen über die komplette Bevölkerung verteilt?
+    \item Measurement Bias: Wie werden die Merkmale und Zielvariablen erstellt?
+    \item Representation Bias: Kommt es zu Änderungen des Modells bei anderer Zielfunktion oder anderen Merkmalen?
+    \item Aggregation Bias: Kommt es zu Änderungen durch das Wählen einer komplexen Zielfunktion oder anderen Trainingsdaten?
+    \item Learning Bias: Kommt es zu Änderungen durch ein anderes Modell?
+    \item Evaluation Bias: Kommt es zu Änderungen, wenn mehr als ein Datensatz oder mehrere Darebsätze zur Überprüfung genutzt wird?
+    \item Deployment Bias: Dieser Typ ist schwer zu erkennen und aufzuheben, da dieser nur durch Experten aufgedeckt werden kann.
+\end{itemize}
+
+\subsubsection{Dokumentation der Daten}
+Für die Dokumentation der Daten werden häufig sogenannte Datasheets empfohlen. Datasheets verfolgen den Zweck getroffene - eventuell unbemerkt getroffene - Annahmen aufzudecken. Diese Datasheets können darüber hinaus dabei helfen Fairness zu gewährleisten und die Leistung des ML-Systems zu optimieren \cite{vaughan2020human}. 
+Beispiel für diese Datasheets sind z.B. nach \cite{vaughan2020human} Google Facets und Datasheets for Datasets.
+Google Facets ist ein Visualisierungstool, was es ermöglicht Daten auf unterschiedlichen Granularitätsebenen zu untersuchen \cite{GoogleFacets}.
+Datasheets for Datasets, entwickelt von \cite{gebru2021datasheets}, sind Datenblätter, welche für jeden Datensatz erstellt werden sollten und für die Dokumentation von Zusammensetzung, Sammlung, Motivation, der geplanten Verwendung, Verteilung und Pflege eingesetzt werden soll.
+\cite{grasso2020applying} haben Datasheets for Datasets etwas abgewandelt für den Bereich der Biologie.
+\todo[inline]{Hier gehe ich noch genauer auf die Datasheets-Arten ein und zeige vlt. Beispiele}
+
+Merkmale, welche sich bereits in diesen Datasheets wiederfinden lassen, werden auch von anderen wissenschaftlichen Arbeiten herausgestellt. So betont \cite{de2018algorithmic}, dass für die Transparenz eines Datensatzes angegeben werden sollte, welche Merkmale vorhanden sind und wie diese z.B. über Frauen und Männer verteilt sind. Klassenungleichheiten sollten bei Datensätzen transparent gemacht werden.
+
+Fairness kann auch mithilfe von Datendokumentation aufgedeckt werden, so könnte demonstriert werden wie und warum die Datensätze entstanden sind und warum ein konkreter Datensatz überhaupt ausgewählt wurde \cite{denton2020bringing}. In Bezug auf Fairness betonen jedoch \cite{de2018algorithmic}, dass es schwierig ist diskriminierende Merkmale überhaupt zu erkennen.
+
+\subsubsection{Dokumentation der Datenverarbeitung}
+Bevor ein Datensatz überhaupt genutzt werden kann, muss dieser häufig zunächst bereinigt werden. \cite{garbin2022assessing} empfehlen hier auch den Prozess der Bereinigung zu prüfen und auch festzuhalten, wie oder ob auf Bias in den Daten geprüft wurde. Beispielsweise kann angegeben werden, ob Zielvariablen korrigiert wurden.
+
+\subsubsection{Transparenz über gleiche Datenformate}
+\cite{huvc2021anomaly} empfehlen für den leichteren Überblick das Nutzen eines einheitlichen Datenformats. Hier nennen sie JSON oder XML als Optionen, wenngleich sie XML den Vorzug geben, da diese vollständige Schemata sowie Standardtransformationen ermöglicht.

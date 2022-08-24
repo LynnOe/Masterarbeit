@@ -1,0 +1,44 @@
+\subsection{Was transparent machen?}
+\subsubsection{Inhaltlicher Kontext}
+\cite{sendak2020human} stellten in ihrer Studie im medizinischen Umfeld heraus, solche Informationen mitzugeben, welche für das Publikum relevante Aspekte aufzeigen. So sollten sich Erklärungen auf den Kontext beziehen und sich auf Problemlösungen fokussieren \cite{sendak2020human}.
+
+\subsubsection{Rahmenbedingungen und sozio-technischer Kontext}
+\cite{cai2019hello} untersuchten im medizinischen Kontext, welche Informationen von Mitarbeitenden vor der Einführung eines ML-Systems gewünscht werden. Oberkategorien dieser gewünschten Informationen sind Möglichkeiten und Grenzen, Funktionalitäten, Subjektivität, Design-Ziele, Gedanken vor dem Einsatz.
+\begin{itemize}
+    \item In Bezug auf Möglichkeiten und Grenzen des Systems sollte kommuniziert werden, wie die grundsätzliche Performance des Algorithmus ist und worin dieser gute oder eben weniger gute Leistungen erbringt. Dies kann mithilfe von Leistungsmetriken angeben werden, in denen verdeutlicht wird, wie viele Datensätze richtig oder falsch klassifiziert wurden. Weiter sei für Nutzer interessant, wie sich der einzusetzende Algorithmus bei Fällen verhält, welche häufiger selbst von Menschen falsch eingeordnet werden. Auch sind die theoretischen Grenzen von KI grundsätzlich wichtig. Darüber hinaus sind die Trainingsdaten von Interesse. Hierbei ist die Diversität und Menge der Trainingsdaten wichtig, während sich auch das Datenformat (numerisch, binär, Bilder) von Bedeutung ist.
+    \item In Bezug auf die Funktionalität wünschen sich Nutzer eine konkrete Beschreibung, über das, was der Algorithmus leistet. Hierbei steht zum einen der fachliche Kontext im Vordergrund, so nennen \cite{cai2019hello}, dass im medizinischen Kontext z.B. darauf hingewiesen werden könnte, ob ein Algorithmus \enquote{nur} dazu in der Lage ist Krebs zu erkennen oder noch weitere Krankheiten entdecken kann. Daneben ist auch der technische Kontext nicht uninteressant, so sei anzumerken, wie sich die Funktionsweise des Algorithmus im Vergleich zu der des Menschens unterscheidet. Für Bildklassifikation sei hier beispielsweise die Frage danach genannt, ob ein Algorithmus das Bild im Ganzen betrachtet oder ein Bild zunächst in einzelne Komponenten aufteilt und diese dann untersucht. Weiter ist von Interesse aus welcher Datenbasis heraus der Algorithmus die Entscheidung trifft. Des Weiteren ist bedeutsam für die medizinischen Praktiker, ob auch andere Daten des gleichen oder anderer Patienten in die Entscheidungsfindung miteinflossen.
+    \item Da in der Praxis die Subjektivität einzelner Mediziner eine große Rolle spielt, ist die Subjektivität des Algorithmus wichtig für spätere Nutzer des ML-Systems. So ist es von Bedeutung Grenzfälle aufzuzeigen, welche auch von Menschen unterschiedlich bewertet werden. Hier interessiert die Praktiker der fachliche Hintergrund des Systems. Während der Einführung sollte außerdem die Möglichkeit bestehen, dass menschliche Praktiker ihre eigenen Diagnosen mit der der KI abgleichen können, um diese somit besser einschätzen zu können.
+    \item Neben stark auf den Algorithmus selbst bezogenen Aspekte sprechen Nutzer auch den Design-Zielen eine hohe Bedeutung zu. So sei interessant, was der Nutzen des Systems in Bezug auf Kosten und Effizienz sei. Daneben ist wesentlich, ob die KI mit Menschen arbeiten soll oder unabhängig handelt.
+    \item Weiterführend sind Gedanken vor dem Einsatz transparent zu machen. Diesbezüglich sollte kommuniziert werden, ob die rechtlichen und regulatorischen Rahmenbedingungen abgeklärt wurden oder ob eine behördliche Prüfung des Systems noch aussteht. Daneben wünschen sich Nutzer zu wissen, ob das Tool bereits schon von anderen Organisationen eingesetzt wird oder ob es im wissenschaftlichen Kontext auf seine Funktionweise hin überprüft wurde. Daneben stellt sich die Frage, ob es sich auf die täglichen Arbeitsabläufe der Praktiker auswirkt.
+\end{itemize}
+
+Ähnlich wie \cite{cai2019hello} wurde eine Studie von \cite{vorm2018assessing} durchgeführt, die untersuchte, was Menschen über das System wissen wollen, damit sie es als transparent erachten. Hierbei erarbeiteten \cite{vorm2018assessing} Faktoren und Beispielfragen in Bezug auf diese Faktoren. Zusätzlich erhoben die Autoren, wie wichtig einzelne Faktoren für Transparenz aus Nutzersicht wirken. In folgender Aufzählung\footnote{entnommen aus \cite{cai2019hello}, übersetzt mit kleinen Ergänzungen aus dem Fließtext des Papers} sind die Aspekte zusammengefasst.
+\begin{itemize}
+    \item Technische Faktoren:
+    \begin{itemize}
+        \item Daten (Wichtig): Wie aktuell sind die Daten, auf denen eine Entscheidung beruht?
+        \item Unsicherheit (mittel): Trifft das System Annahmen aufgrund von unsauberen Daten?
+        \item Logik (Wichtig): Was spricht für oder gegen die Entscheidung eines Systems? Woher kommt eine Entscheidung des Systems?
+        \item Zuverlässigkeit (mittel): Unter welchen Bedingungen lag das System in der Vergangenheit falsch?
+    \end{itemize}
+    \item Persönliche Faktoren:
+    \begin{itemize}
+        \item Personalisierung (mittel): Wurde diese Empfehlung speziell für einen bestimmten Nutzer ausgesprochen?
+        \item Vertrauen (Wichtig): Wie wird Vertrauen dieses System gemessen?
+        \item Nachvollziehbarkeit (weniger wichtig): Was geschieht, wenn ein Nutzer die Entscheidung des Systems ablehnt?
+    \end{itemize}
+    \item Soziale Faktoren:
+    \begin{itemize}
+        \item Soziales Filtern (weniger wichtig): Wie ähnlich ist eine konkrete Person anderen Personen, welche auch diese Empfehlung erhalten haben?
+    \end{itemize}
+\end{itemize}
+Ergänzen nennen \cite{vorm2018assessing} noch weitere Aspekte, die da wären:
+\begin{itemize}
+    \item Externe Abhängigkeiten: Mit welchen Daten arbeitet das System noch?
+    \item Kritikalität: Die Bedeutung von Transparenz nimmt zu, wenn die Entscheidungen des Systems einen selbst oder andere beeinflussen.
+    \item Rolle des Nutzers: Welche Informationen von Interesse sind hängt stark von der Rolle des jeweiligen Betrachters ab. So haben Entwickler, fachkundige Endnutzer sowie sekundäre Nutzer einen unterschiedlichen Fokus.
+\end{itemize}
+
+Diese zwei umfassenden Studien werden von anderen Wissenschaftlern weiter ergänzt und untermauert. So merken \cite{zhou20182d} an, dass das Kommunizieren von Unsicherheiten des Systems einen großen Teil zur Transparenz beitragen. Dies gilt jedoch nicht nur für Endnutzer des Systems, sondern nach \cite{gomez2021advice} sei auch für Modellentwickler interessant, was die Stärken und Schwächen des Modells sind, was auch durch das Aufzeigen von Fehlerfällen ausgedrückt werden kann.
+\cite{irion2022algorithms} sprechen die Empfehlung aus nicht nur den Algorithmus, sondern auch soziale Aspekte und das gesamte System in die Kommunikation miteinzubeziehen.
+\cite{goldenfein2019algorithmic} ergänzt, dass Transparenz auch Klarheit bei der Beschaffung und Umsetzung bedeute. Weiter sind Einfluss von Entscheidungen während der Nutzung von ML-Systemen von Bedeutung.
